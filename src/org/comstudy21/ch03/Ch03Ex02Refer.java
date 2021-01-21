@@ -13,6 +13,8 @@ class Point {
 	int y;
 }
 
+// 패키지 멤버.
+
 public class Ch03Ex02Refer {
 	
 	static void swap(Point p) { // 받을 땐 타입만 맞춰주면 됨!
