@@ -19,9 +19,7 @@ public class Ch03Ex02Refer {
 		int temp = p.x;
 		p.x = p.y;
 		p.y = temp;
-	
 	}
-	
 	public static void main(String[] args) {
 		
 		Point p1 = null; // Point 타입의 참조변수 p1을 선언했다.
