@@ -58,23 +58,4 @@ class Student {
 			System.out.println(st);
 		}
 	}
-
-	public static void test(String[] args) {
-		
-		Student kim = new Student("김진섭","이탈리아어학과", 4.5, 10);
-		Student lee = new Student("이순신", "전술과", 5.0, 1); 
-		Student park = new Student("박혁거세", "창업과", 4.8, 1);
-	
-		Student[] stdArr = new Student[3];
-		stdArr[0] = kim;
-		stdArr[1] = lee;
-		stdArr[2] = park;
-		
-		stdArr[1].name = "이순자";
-		stdArr[1].major = "가정학과";
-		
-		for(Student std : stdArr) {
-			System.out.println(std);
-		}
-	}
 }

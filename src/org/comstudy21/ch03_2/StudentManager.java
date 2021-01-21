@@ -5,16 +5,15 @@ import java.util.Scanner;
 public class StudentManager {
 	
 	   static Scanner scan = new Scanner(System.in);
-	   static Scanner scan2 = new Scanner(System.in);
 	   
-	   static final int MAX = 2; // 50
+	   static final int MAX = 50; // 50
 	   static Student[] stArr = new Student[MAX];
 	   static int top = 0;
 	   
 	   static Student mkStudent() {
 	      Student student = new Student();
 	      System.out.print("성명>>> ");
-	      student.name = scan2.nextLine();
+	      student.name = scan.next();
 	      System.out.print("학과>>> ");
 	      student.major = scan.next();
 	      System.out.print("성적>>> ");
@@ -60,8 +59,26 @@ public class StudentManager {
 	
 	static void search() {
 		System.out.println("::: SEARCH :::");
+		System.out.println("찾으실 학생의 이름을 입력해주세요: ");
+		
+		String findName = scan.next();	
+		
+		for(int i=0; i<stArr.length; i++) {
+			if(findName.equals(stArr[i].name)) {
+				System.out.println(stArr[i]);
+				}else 
+					{System.out.println("목록에 없는 이름 입니다. 다시 입력해주세요.");
+			}
+		}
 	}
 	
+	
+	static void findNum() {
+		// TODO
+		
+		
+	}
+
 	static void modify() {
 		System.out.println("::: MODIFY :::");
 	}
