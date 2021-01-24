@@ -3,7 +3,7 @@ package org.comstudy21.ch03_2;
 import java.util.Arrays;
 import java.util.Scanner;
 
-class Student {
+public class Student {
 	 String name;
 	 String major;
 	 double point;

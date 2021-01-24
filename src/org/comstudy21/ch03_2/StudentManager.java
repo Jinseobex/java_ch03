@@ -1,5 +1,6 @@
 package org.comstudy21.ch03_2;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class StudentManager {
@@ -31,7 +32,7 @@ public class StudentManager {
 			try {
 				no = scan.nextInt();
 			} catch (Exception e) {
-				System.out.println("정수만 입력 가능합니다!");
+				System.out.println("정수만 입력 가능합니다.");
 				scan.next(); // 버퍼를 비워준다
 				menu(); // 재귀호출
 			}
@@ -63,26 +64,72 @@ public class StudentManager {
 		
 		String findName = scan.next();	
 		
-		for(int i=0; i<stArr.length; i++) {
+		for(int i=0; i<top; i++) {
 			if(findName.equals(stArr[i].name)) {
-				System.out.println(stArr[i]);
-				}else 
-					{System.out.println("목록에 없는 이름 입니다. 다시 입력해주세요.");
+				System.out.println("검색하신 학생의 정보: "+stArr[i]);
+				return;
+				}
 			}
+			System.out.println("목록에 없는 이름 입니다. 다시 입력해주세요.");
+			return;
 		}
-	}
 	
+	static void modify() {
+		System.out.println("::: MODIFY :::");
+		System.out.println("수정하실 학생의 이름을 입력해주세요: ");
+		String findName = scan.next();
 	
-	static void findNum() {
-		// TODO
+		for(int i=0; i<top; i++) {
+			if(findName.equals(stArr[i].name)) {
+				System.out.println("검색하신 학생의 정보: "+stArr[i]);
+				System.out.println("수정하실 학생의 정보를 입력해주세요: 1.이름 2.학과 3.성적 4.등수");	
+				
+				int select = scan.nextInt();
+				
+//				String name = scan.next();
+//				String major = scan.next();
+//				Double point = scan.nextDouble();
+//				int rank = scan.nextInt();
+				
+				switch(select) {
+				
+				case 1 :
+					System.out.println(1);
+				modiname(i);
+				case 2 :
+				
+				case 3 :
+				
+				case 4 :
+				 
+					break;
+				
+				default :
+					System.out.println("잘못 입력하셨습니다. 1~4사이의 정수를 입력해주세요.");
+				
+				
+			}	
+		}
 		
+			System.out.println("목록에 없는 이름 입니다. 다시 입력해주세요.");
+			return;
+	}
+	}
+	static void modiname(int inserNum) {
+	
+		ArrayList<Student> st = new ArrayList<Student>();
+		st.add(stArr[inserNum].name);
+		
+		System.out.println("바꾸실 학생의 이름을 입력해주세요: ");
+		String name = scan.next();
+		st.remove(inserNum);
+		st.add(inserNum, name);
+		System.out.println("학생의 이름이 "+name+"으로 변경 되었습니다.");
+		System.out.println("변경된 학생의 정보: "+st);
+//		System.out.println("변경된 학생의 정보: "+stArr[inserNum]);
 		
 	}
 
-	static void modify() {
-		System.out.println("::: MODIFY :::");
-	}
-	
 	static void delete() {
 		System.out.println("::: DELETE :::");
 	}
