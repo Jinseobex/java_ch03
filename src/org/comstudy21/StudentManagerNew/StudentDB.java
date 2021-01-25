@@ -34,8 +34,6 @@ public class StudentDB {
 			
 			System.out.println(list);
 			System.out.println(list,1);
-		
-	
 	
 	}
 
